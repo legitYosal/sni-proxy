@@ -10,3 +10,18 @@
   retries: 3
   delay: 10
   become: true
+
+- name: Template sniproxy config
+  become: true
+  ansible.builtin.template:
+    src: sniproxy.conf.j2
+    dest: /etc/sniproxy.conf
+    owner: root
+    group: root
+    mode: "a+x"
+
+- name: Start service
+  ansible.builtin.service:
+    name: sniproxy
+    state: started
+    enabled: yes

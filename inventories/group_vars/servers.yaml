@@ -1,0 +1,5 @@
+
+
+sni_proxy_sites:
+  - domain: test.com
+  - domain: test2.com

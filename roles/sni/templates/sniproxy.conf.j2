@@ -1,0 +1,29 @@
+user daemon
+
+pidfile /tmp/sniproxy.pid
+
+error_log {
+    syslog daemon
+    priority notice
+}
+
+listener 443 {
+    protocol tls
+    table HttpsTable
+    access_log {
+        filename /var/log/sniproxy/https_access.log
+        priority notice
+    }
+}
+
+table HttpsTable {
+{% if sni_proxy_sites is defined %}
+{% for site in sni_proxy_sites %}
+    {{ site.domain }} {{ site.domain }}
+{% endfor %}
+{% endif %} 
+}
+
+resolver {
+   mode ipv4_only
+}

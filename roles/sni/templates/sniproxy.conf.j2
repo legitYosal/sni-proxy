@@ -17,8 +17,8 @@ listener 443 {
 }
 
 table HttpsTable {
-{% if sni_proxy_sites is defined %}
-{% for site in sni_proxy_sites %}
+{% if sni_proxy_domains is defined %}
+{% for site in sni_proxy_domains %}
     {{ site.domain }} {{ site.domain }}
 {% endfor %}
 {% endif %} 

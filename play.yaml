@@ -1,0 +1,10 @@
+--- 
+- name: Configure SNI server
+  hosts: servers
+  remote_user: "{{ ansible_user }}"
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: true
+  roles:
+    - sni

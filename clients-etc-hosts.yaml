@@ -1,0 +1,10 @@
+--- 
+- name: Configure ect hosts for clients
+  hosts: clients
+  remote_user: "{{ ansible_user }}"
+  become: true
+  become_method: sudo
+  connection: ssh
+  gather_facts: true
+  roles:
+    - etc-hosts

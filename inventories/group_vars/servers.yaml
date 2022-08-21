@@ -1,4 +1,0 @@
-
-ansible_user: root
-sni_proxy_sites:
-  - domain: k8s.gcr.io

@@ -6,7 +6,8 @@
   delay: 5
 
 - name: Install sni proxy
-  ansible.builtin.apt: sniproxy
+  ansible.builtin.apt: 
+    name: sniproxy
   retries: 3
   delay: 10
   become: true

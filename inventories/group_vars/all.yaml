@@ -9,3 +9,4 @@ sni_server_ipv4: !vault |
 sni_proxy_domains:
   - domain: k8s.gcr.io
   - domain: registry.gitlab.com
+  - domain: gitlab.com

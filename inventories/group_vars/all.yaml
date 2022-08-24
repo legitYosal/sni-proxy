@@ -12,3 +12,4 @@ sni_proxy_domains:
   - domain: gitlab.com # add sub domains after
   - domain: registry.gitlab.com
   - domain: charts.gitlab.io
+  - domain: download.docker.com
